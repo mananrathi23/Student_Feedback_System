@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JKLU Feedback Portal</title>
+    <link rel="stylesheet" href="event.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="5.png" alt="Logo">
+                
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li>Course Feedback</li>
+                    <li>Workshop Feedback</li>
+                    <li class="underline">Event Feedback</li>
+            
+                </ul>
+            </nav>
+            <div class="others">
+                <ul>
+                    <li>Settings</li>
+                    <li>Help</li>
+                    <li>Accounts</li>
+                </ul>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <h1>JKLU Feedback Portal</h1>
+                <div class="account">
+                    
+                </div>
+            </header>
+            <section class="content">
+                <!-- Dropdown Bar -->
+                <div class="dropdown">
+                    <button class="dropdown-button" onclick="toggleOptions()">Select the Event</button>
+                    <div class="options" id="options">
+                        <div class="option-item" onclick="selectEvent('Sabrang 2024')">Sabrang 2024</div>
+                        <div class="option-item" onclick="selectEvent('Parichay 2024')">Parichay 2024</div>
+                        <div class="option-item" onclick="selectEvent('Mukabla 2024')">Mukabla 2024</div>
+                    </div>
+                </div>
+
+                <!-- Feedback Form -->
+                <div class="feedback-form" id="feedbackForm">
+                    <h2>Feedback for <span id="selectedEvent"></span></h2>
+                    
+                    <label>Overall, how satisfied were you with the event? (Rating scale: Very Satisfied to Very Dissatisfied)</label>
+                    <div class="rating">
+                        <label><input type="radio" name="satisfaction" value="Very Satisfied"> Very Satisfied</label>
+                        <label><input type="radio" name="satisfaction" value="Satisfied"> Satisfied</label>
+                        <label><input type="radio" name="satisfaction" value="Neutral"> Neutral</label>
+                        <label><input type="radio" name="satisfaction" value="Dissatisfied"> Dissatisfied</label>
+                        <label><input type="radio" name="satisfaction" value="Very Dissatisfied"> Very Dissatisfied</label>
+                    </div>
+
+                    <label>Did the event meet your expectations?</label>
+                    <div class="yes-no">
+                        <label><input type="radio" name="expectations" value="yes"> Yes</label>
+                        <label><input type="radio" name="expectations" value="no"> No</label>
+                        <label><input type="radio" name="expectations" value="partially"> Partially</label>
+                    </div>
+
+                    <label for="likeMost">What did you like most about the event?</label>
+                    <input type="text" id="likeMost" placeholder="Type your answer here...">
+                    
+                    <label for="likeLeast">What did you like least about the event?</label>
+                    <input type="text" id="likeLeast" placeholder="Type your answer here...">
+                    
+                    <label>Would you recommend this event to others?</label>
+                    <div class="yes-no">
+                        <label><input type="radio" name="recommend" value="yes"> Yes</label>
+                        <label><input type="radio" name="recommend" value="no"> No</label>
+                        <label><input type="radio" name="recommend" value="maybe"> Maybe</label>
+                    </div>
+
+                    <label>How satisfied were you with the event venue? (Rating scale: 1-5)</label>
+                    <div class="rating">
+                        <label><input type="radio" name="venueSatisfaction" value="1"> 1</label>
+                        <label><input type="radio" name="venueSatisfaction" value="2"> 2</label>
+                        <label><input type="radio" name="venueSatisfaction" value="3"> 3</label>
+                        <label><input type="radio" name="venueSatisfaction" value="4"> 4</label>
+                        <label><input type="radio" name="venueSatisfaction" value="5"> 5</label>
+                    </div>
+
+                    <label for="improvement">How can we improve?</label>
+                    <textarea id="improvement" placeholder="Type your suggestions here..."></textarea>
+                    
+                    <button onclick="submitFeedback()">Submit Feedback</button>
+                </div>
+
+                <!-- Images Section -->
+                
+            </section>
+        </main>
+    </div>
+
+    <script src="event.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+/* Reset some default browser styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ece9e6, #ffffff); /* Light gradient background */
+}
+
+/* Layout */
+.container {
+    display: flex;
+    height: 100vh; /* Full-screen height */
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px; /* Adjusted width for a broader sidebar */
+    background: linear-gradient(180deg, #FFC312, #FFC312); /* Vertical gradient for sidebar */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #000000;
+}
+
+
+
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    width: 80px;
+    border-radius: 50%; /* Make logo circular */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Title Styling */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgb(15, 15, 15); /* Bottom border as line */
+}
+
+/* Header title */
+.header h1 {
+    font-size: 24px;
+    color: black;
+}
+
+/* Menu and Others */
+.menu ul, .others ul {
+    list-style: none;
+}
+
+.menu ul li, .others ul li {
+    margin: 15px 0;
+    font-size: 18px;
+    cursor: pointer;
+    color: #000000;
+    transition: 0.3s;
+}
+
+.menu ul li:hover, .others ul li:hover {
+    transform: scale(1.05);
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8);
+}
+
+/* Sidebar full height */
+.others {
+    margin-top: auto;
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background: #f0f4f8;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Feedback Form Styles */
+.feedback-form {
+    display: none; /* Hidden by default */
+    margin-top: 20px;
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Additional styles for form elements */
+.feedback-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.feedback-form textarea,
+.feedback-form input[type="text"] {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.feedback-form button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Centered Dropdown Container */
+.dropdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Dropdown Button Styling */
+.dropdown-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.dropdown-button:hover {
+    background-color: #0056b3;
+}
+
+/* Options Styling */
+.options {
+    display: none;
+    margin-top: 10px;
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: left;
+    padding: 10px;
+    width: 200px;
+}
+
+.options.show {
+    display: block;
+}
+
+.option-item {
+    cursor: pointer;
+    padding: 5px;
+}
+
+.option-item:hover {
+    background-color: #e0e0e0;
+}

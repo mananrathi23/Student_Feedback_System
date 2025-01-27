@@ -1,0 +1,157 @@
+/* Reset some default browser styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ece9e6, #ffffff); /* Light gradient background */
+    background-size: cover; /* Ensures gradient covers entire background */
+}
+
+/* Layout */
+.container {
+    display: flex;
+    height: 100vh; /* Full-screen height */
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    background: linear-gradient(180deg, #6a82fb, #fc5c7d); /* Vertical gradient for sidebar */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    width: 80px;
+    border-radius: 50%; /* Make logo circular */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.menu ul, .others ul {
+    list-style: none;
+}
+
+.menu ul li, .others ul li {
+    margin: 15px 0;
+    font-size: 18px;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.menu ul li:hover, .others ul li:hover {
+    transform: scale(1.05);
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8);
+}
+
+/* Sidebar full height */
+.others {
+    margin-top: auto;
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec); /* Softer gradient background */
+    border-radius: 10px; /* Rounded corners for a smooth look */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow for better contrast */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Centered Header */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+    border-bottom: 2px solid #ddd; /* Divider line */
+    padding-bottom: 10px; /* Space between header text and divider */
+}
+
+.header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Account Styling */
+.account {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.account-icon {
+    width: 35px;
+    height: 35px;
+    background-color: #f0b7a4;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Content Styling */
+.content {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-top: 20px;
+}
+
+.courses, .events, .workshops { /* Added .workshops class */
+    width: 30%; /* Adjusted width for better spacing */
+    background-color: rgba(255, 255, 255, 0.85); /* Slightly transparent white background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.courses h2, .events h2, .workshops h2 { /* Added .workshops h2 */
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.courses ul, .events ul, .workshops ul { /* Added .workshops ul */
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.courses ul li, .events ul li, .workshops ul li { /* Added .workshops li */
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.view-button {
+    background-color: #6a82fb;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.view-button:hover {
+    background-color: #fc5c7d;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}

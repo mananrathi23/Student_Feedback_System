@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JKLU Feedback Portal</title>
+    <link rel="stylesheet" href="courseReport.css">
+    <style>
+        /* Add styles for the dropdown bar */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh; /* Full height of the viewport */
+        }
+        .container {
+            display: flex;
+            width: 100%;
+        }
+        .sidebar {
+            width: 250px; /* Fixed width for sidebar */
+            background-color: #f8f9fa; /* Light gray background */
+            color: #343a40; /* Dark gray text */
+            padding: 20px;
+        }
+        .main-content {
+            flex-grow: 1; /* Allow main content to grow */
+            padding: 20px;
+            overflow-y: auto; /* Allow scrolling if content overflows */
+        }
+       
+        /* Basic table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f0f5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="1-removebg-preview.png" alt="Logo">
+                <h2>JKLU Feedback Portal</h2>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li class="underline">Course Feedback</li>
+                    <li>Workshop Feedback</li>
+                    <li>Event Feedback</li>
+                </ul>
+            </nav>
+            <div class="others">
+                <ul>
+                    <li>Settings</li>
+                    <li>Help</li>
+                    <li>Accounts</li>
+                </ul>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <h1>JKLU Feedback Portal</h1>
+            </header>
+            <section class="content">
+                <h2>Your Feedback History</h2> 
+                <table id="feedbackTable">
+                    <thead>
+                        <tr>
+                            <th>Like Most</th>
+                            <th>Like Least</th>
+                            <th>Overall Rating</th>
+                            <th>Material Relevant?</th>
+                            <th>Learning Objectives Clear?</th>
+                            <th>Teaching Methods Effective?</th>
+                            <th>Course Pace Appropriate?</th>
+                            <th>Additional Feedback</th> 
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Feedback data will be inserted here -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        async function fetchFeedbackData() {
+            try {
+                // Fetch feedback data from backend
+                const response = await fetch('http://localhost:8080/course/get');
+                const data = await response.json();
+
+                // Reference the table body
+                const tableBody = document.getElementById('feedbackTable').getElementsByTagName('tbody')[0];
+
+                // Populate the table with fetched data
+                data.forEach(feedback => {
+                    const row = tableBody.insertRow();
+
+                    row.insertCell(0).textContent = feedback.positive;
+                    row.insertCell(1).textContent = feedback.negatives;
+                    row.insertCell(2).textContent = feedback.rating;
+                    row.insertCell(3).textContent = feedback.relavant;
+                    row.insertCell(4).textContent = feedback.objective;
+                    row.insertCell(5).textContent = feedback.method;
+                    row.insertCell(6).textContent = feedback.pace;
+                    row.insertCell(7).textContent = feedback.comments;
+                });
+            } catch (error) {
+                console.error('Error fetching feedback data:', error);
+            }
+        }
+
+        // Call the function to load data when page loads
+        window.onload = fetchFeedbackData;
+    </script>
+</body>
+</html>

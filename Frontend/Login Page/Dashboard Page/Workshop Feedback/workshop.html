@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JKLU Feedback Portal</title>
+    <link rel="stylesheet" href="workshop.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="image.png" alt="Logo">
+                <h2>JKLU Feedback Portal</h2>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li>Course Feedback</li>
+                    <li class="underline">Workshop Feedback</li>
+                    <li>Event Feedback</li>
+                </ul>
+            </nav>
+            <div class="others">
+                <ul>
+                    <li>Settings</li>
+                    <li>Help</li>
+                    <li>Accounts</li>
+                </ul>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <h1>JKLU Feedback Portal</h1>
+            </header>
+            <section class="content">
+                <!-- Centered Dropdown Bar -->
+                <div class="dropdown-container">
+                    <button class="dropdown-button" onclick="toggleOptions()">Select the Workshop</button>
+                    <div class="options" id="options">
+                        <div class="option-item" onclick="selectWorkshop('Workshop on Web Development')">Workshop on Web Development</div>
+                        <div class="option-item" onclick="selectWorkshop('Data Science Bootcamp')">Data Science Bootcamp</div>
+                        <div class="option-item" onclick="selectWorkshop('Machine Learning Fundamentals')">Machine Learning Fundamentals</div>
+                        <div class="option-item" onclick="selectWorkshop('Introduction to Cloud Computing')">Introduction to Cloud Computing</div>
+                    </div>
+                </div>
+
+                <!-- Feedback Form -->
+                <div class="feedback-form" id="feedbackForm">
+                    <h2>Feedback for <span id="selectedWorkshop"></span></h2>
+                    
+                    <label for="likeMost">What did you like most about the workshop?</label>
+                    <input type="text" id="likeMost" placeholder="Type your answer here...">
+                    
+                    <label for="likeLeast">What did you like least about the workshop?</label>
+                    <input type="text" id="likeLeast" placeholder="Type your answer here...">
+                    
+                    <label>Overall, how would you rate the workshop? (On a scale of 1-5)</label>
+                    <div class="rating">
+                        <label><input type="radio" name="rating" value="1"> 1</label>
+                        <label><input type="radio" name="rating" value="2"> 2</label>
+                        <label><input type="radio" name="rating" value="3"> 3</label>
+                        <label><input type="radio" name="rating" value="4"> 4</label>
+                        <label><input type="radio" name="rating" value="5"> 5</label>
+                    </div>
+
+                    <label>Was the workshop material relevant and up-to-date?</label>
+                    <div class="yes-no">
+                        <label><input type="radio" name="materialRelevant" value="yes"> Yes</label>
+                        <label><input type="radio" name="materialRelevant" value="no"> No</label>
+                    </div>
+
+                    <label>Were the learning objectives clear and achievable?</label>
+                    <div class="yes-no">
+                        <label><input type="radio" name="learningObjectives" value="yes"> Yes</label>
+                        <label><input type="radio" name="learningObjectives" value="no"> No</label>
+                    </div>
+
+                    <label>Were the teaching methods effective?</label>
+                    <div class="yes-no">
+                        <label><input type="radio" name="teachingMethods" value="yes"> Yes</label>
+                        <label><input type="radio" name="teachingMethods" value="no"> No</label>
+                    </div>
+
+                    <label>Was the pace of the workshop appropriate?</label>
+                    <div class="yes-no">
+                        <label><input type="radio" name="workshopPace" value="yes"> Yes</label>
+                        <label><input type="radio" name="workshopPace" value="no"> No</label>
+                    </div>
+                    
+                    <label for="feedback">Please provide any additional feedback:</label>
+                    <textarea id="feedback" placeholder="Type your feedback here..."></textarea>
+                    
+                    <button onclick="submitFeedback()">Submit Feedback</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="workshop.js"></script>
+</body>
+</html>
